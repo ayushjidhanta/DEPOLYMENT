@@ -1,0 +1,20 @@
+.one .carousel-item {
+    height: 22rem;
+    color:rgb(255, 255, 255);
+    position: relative;
+    border: none;
+    background-position: center;
+    background-size: cover;
+   
+    
+    /* background-image: url(/public/About-Images/SliderAbout-img.jpg); */
+}
+
+.one .carousel-item .container{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right:0;
+    padding: 30px;
+}
+
