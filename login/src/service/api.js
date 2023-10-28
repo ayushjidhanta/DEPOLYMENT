@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/";
+const url = "";
 export const signupuser = async (data) => {
   try {
     const response = await axios.post(`${url}signup/createuser`, data);
