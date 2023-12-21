@@ -1,10 +1,11 @@
 import axios from "axios";
+import { apiUrl } from "../../config";
 import * as actionType from "../constants/cartConstants";
-const URL = "";
+
 
 export const addToCart = (id, quantity) => async (dispatch) => {
   try {
-    const { data } = await axios.get(`${URL}/products/getProducts/${id}`);
+    const { data } = await axios.get(`${apiUrl}/products/getProducts/${id}`);
 
     // check if it data also in cart or not
     // const response = await saveCartDetails(data);
