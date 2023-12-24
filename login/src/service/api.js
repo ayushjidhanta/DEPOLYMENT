@@ -1,9 +1,9 @@
 import axios from "axios";
+import { apiUrl } from "../config";
 
-const url = "http://localhost:5000/";
 export const signupuser = async (data) => {
   try {
-    const response = await axios.post(`${url}signup/createuser`, data);
+    const response = await axios.post(`${apiUrl}/signup/createuser`, data);
     return response;
   } catch (error) {
     console.log("error", error);
@@ -13,7 +13,7 @@ export const signupuser = async (data) => {
 
 export const loginuser = async (data) => {
   try {
-    const response = await axios.post(`${url}auth/login`, data);
+    const response = await axios.post(`${apiUrl}/auth/login`, data);
     return response;
   } catch (error) {
     console.log("error", error);

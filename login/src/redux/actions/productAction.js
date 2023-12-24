@@ -1,12 +1,11 @@
 import axios from "axios";
-
+import { apiUrl } from "../../config";
 import * as actionType from "../constants/productConstants";
-const URL = "http://localhost:5000";
+
 
 export const getProducts = () => async (dispatch) => {
   try {
-    console.log("Running in redux");
-    const { data } = await axios.get(`${URL}/products/getProducts`);
+    const { data } = await axios.get(`${apiUrl}/products/getProducts`);
     dispatch({ type: actionType.GET_PRODUCTS_SUCCESS, payload: data });
   } catch (error) {
     debugger;

@@ -2,14 +2,11 @@ import express from "express";
 import { signupUser, loginUser } from "./controller/user-controller.js";
 import connectToMongo from "./db.js";
 import cors from "cors";
-import DefaultData from "./default.js";
-import { fileURLToPath } from "url";
 import path from 'path';
 import {
   getProducts,
   getProductsById,
 } from "./controller/product-controller.js";
-import { v4 as uuid } from "uuid";
 import bodyParser from "body-parser";
 //import DefaultData from "./default.js";
 connectToMongo();
