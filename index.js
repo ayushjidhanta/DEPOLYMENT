@@ -12,7 +12,7 @@ import bodyParser from "body-parser";
 connectToMongo();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 const router = express.Router();
 const __dirname = path.resolve();
 app.use(cors());
