@@ -1,5 +1,6 @@
 import axios from "axios";
-import { apiUrl } from "../config";
+
+const apiUrl = "";
 
 export const signupuser = async (data) => {
   try {

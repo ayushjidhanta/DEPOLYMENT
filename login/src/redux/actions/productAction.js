@@ -1,16 +1,18 @@
 import axios from "axios";
-import { apiUrl } from "../../config";
 import * as actionType from "../constants/productConstants";
 
-
+const apiUrl = "";
 export const getProducts = () => async (dispatch) => {
   try {
     const { data } = await axios.get(`${apiUrl}/products/getProducts`);
-    dispatch({ type: actionType.GET_PRODUCTS_SUCCESS, payload: data });
+
+    console.log(data);
+
+    dispatch({ type: actionType.GET_PRODUCTS_SUCCESS, payload: data })
   } catch (error) {
     debugger;
     dispatch({
-      type: actionType.GET_PRODUCTS_SUCCESS,
+      type: actionType.GET_PRODUCTS_FAIL,
       payload: error.message,
     });
   }
