@@ -25,7 +25,7 @@ export default function Cart() {
         <header>
           <div className="continue-shopping">
             
-            <h3 style={{ color:"white",}}><i class="fa-sharp fa-solid fa-arrow-left fa-2xl" onClick={handleBack} style={{cursor: "pointer", color:"white",}}></i>&nbsp; &nbsp;continue shopping</h3>
+            <h3 style={{ color:"white",}}><i className="fa-sharp fa-solid fa-arrow-left fa-2xl" onClick={handleBack} style={{cursor: "pointer", color:"white",}}></i>&nbsp; &nbsp;continue shopping</h3>
           </div>
          
         </header>
@@ -49,8 +49,8 @@ export default function Cart() {
       <header>
           <div className="Footer-continue-shopping">
             <h3> Check Out</h3>
-            <div class="Button_Checkout">
-           <button type="button" class="btn btn-light" onClick={handleCheckout}>Checkout</button>
+            <div className="Button_Checkout">
+           <button type="button" className="btn btn-light" onClick={handleCheckout}>Checkout</button>
       </div>
           </div>
         </header>

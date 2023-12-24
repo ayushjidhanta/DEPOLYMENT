@@ -26,15 +26,15 @@ const CartItem = ({ item }) => {
           <p>{shortDescription(item.description)}</p>
         </div>
         <div className="add-minus-quantity" style={{ alignItems: "center" }}>
-          <i class="fas fa-minus minus"></i>
+          <i className="fas fa-minus minus"></i>
           <h2>1</h2>
-          <i class="fas fa-plus add"></i>
+          <i className="fas fa-plus add"></i>
         </div>
         <div className="price">
           <h3>₹ {item.price.cost}</h3>
         </div>
         <div className="remove-item" onClick={() => removeItem(item.id)}>
-          <i class="fas fa-trash-alt remove"></i>
+          <i className="fas fa-trash-alt remove"></i>
         </div>
       </div>
       <hr/>

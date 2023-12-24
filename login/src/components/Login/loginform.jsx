@@ -91,7 +91,7 @@ const LoginForm = () => {
         <div className="coverLogin">
           <form onSubmit={handleAuth} method="POST">
           <h1> Login </h1>
-          <i class="fa-solid fa-user fa-2xl" ></i>
+          <i className="fa-solid fa-user fa-2xl" ></i>
             <input type="text" id="username" onChange={onChange} name = "name" placeholder="username" />
             <p className="pp" id="demo"></p>
             <input type="password" id="password" onChange = {onChange} name = "password" placeholder="password" />
