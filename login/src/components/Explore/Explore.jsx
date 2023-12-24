@@ -12,7 +12,7 @@ export default function Exploree() {
 
   useEffect(() => {
      dispatch(getProducts());
-  }, []);
+  }, [dispatch]);
 
   const { products } = useSelector((state) => state.getProducts);
 
