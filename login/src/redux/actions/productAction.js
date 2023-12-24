@@ -8,6 +8,7 @@ export const getProducts = () => async (dispatch) => {
     const { data } = await axios.get(`${apiUrl}/products/getProducts`);
     dispatch({ type: actionType.GET_PRODUCTS_SUCCESS, payload: data });
   } catch (error) {
+    debugger;
     dispatch({
       type: actionType.GET_PRODUCTS_SUCCESS,
       payload: error.message,

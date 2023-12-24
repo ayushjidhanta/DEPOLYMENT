@@ -72,7 +72,7 @@ export const Checkout = () => {
               </div>
             </div>
             <div className="col-md-6">
-              <label for="inputEmail4" className="form-label">
+              <label htmlFor="inputEmail4" className="form-label">
                 Email
               </label>
               <input
@@ -83,7 +83,7 @@ export const Checkout = () => {
               />
             </div>
             <div className="col-md-6">
-              <label for="inputPhone4" className="form-label">
+              <label htmlFor="inputPhone4" className="form-label">
                 Phone
               </label>
               <input
@@ -94,7 +94,7 @@ export const Checkout = () => {
               />
             </div>
             <div className="col-12">
-              <label for="inputAddress" className="form-label">
+              <label htmlFor="inputAddress" className="form-label">
                 Address
               </label>
               <input
@@ -106,7 +106,7 @@ export const Checkout = () => {
               />
             </div>
             <div className="col-md-4">
-              <label for="inputCity" className="form-label">
+              <label htmlFor="inputCity" className="form-label">
                 City
               </label>
               <input
@@ -117,7 +117,7 @@ export const Checkout = () => {
               />
             </div>
             <div className="col-md-4">
-              <label for="inputState" className="form-label">
+              <label htmlFor="inputState" className="form-label">
                 State
               </label>
 
@@ -127,7 +127,7 @@ export const Checkout = () => {
               </select>
             </div>
             <div className="col-md-4">
-              <label for="inputZip" className="form-label">
+              <label htmlFor="inputZip" className="form-label">
                 Zip
               </label>
               <input

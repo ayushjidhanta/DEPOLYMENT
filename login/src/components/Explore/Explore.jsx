@@ -27,7 +27,7 @@ export default function Exploree() {
         <div className="row">
           {products &&
             products.map((product) => {
-              return <Products product={product}></Products>;
+              return <Products product={product} key={product.id}></Products>;
             })}
         </div>
       </div>
