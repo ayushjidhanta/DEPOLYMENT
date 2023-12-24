@@ -20,6 +20,14 @@ app.use(express.json());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use("/signup", router.post("/createuser", signupUser));
+
+app.use("/auth", router.post("/login", loginUser));
+
+app.use("/products", router.get("/getProducts", getProducts));
+
+app.use("/products", router.get("/getProducts/:id", getProductsById));
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "login/build")));
   app.get("/*", function (req, res) {
@@ -31,13 +39,7 @@ app.listen(port, () => {
   console.log("Successfully running on ", port);
 });
 
-app.use("/signup", router.post("/createuser", signupUser));
 
-app.use("/auth", router.post("/login", loginUser));
-
-app.use("/products", router.get("/getProducts", getProducts));
-
-app.use("/products", router.get("/getProducts/:id", getProductsById));
 // app.use("/login", (req, res) => {
 //     res.send("login screen");
 // })
