@@ -1,7 +1,7 @@
 import axios from "axios";
-import { apiUrl } from "../../config";
 import * as actionType from "../constants/cartConstants";
 
+const apiUrl = "";
 
 export const addToCart = (id, quantity) => async (dispatch) => {
   try {
