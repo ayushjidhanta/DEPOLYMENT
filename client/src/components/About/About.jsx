@@ -1,6 +1,6 @@
 import React from "react";
 // import "./About.css";
-import SliderAbout from "../Sliders/SliderAbout";
+// import SliderAbout from "../Sliders/SliderAbout";
 import Navbar2 from "../Home/Navbar2";
 import Contact1 from "../Contact1/Contact1";
 // import Contact from "../Contact/Contact";
@@ -11,7 +11,7 @@ export default function About() {
       <div className="wraper">
         <h1>h</h1>
       </div>
-      <SliderAbout />
+      {/* <SliderAbout /> */}
 
       <div className="pageAbout">
         <div className="inside">

@@ -5,10 +5,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../components/Home/Home";
 import Cart from "../components/Cart/Cart";
 import About from "../components/About/About";
-import Signup from "../components/Login/SignUp";
+import Signup from "../components/Auth/SignUp/SignUp";
 import Review from "../components/Review/review";
 import Explore from "../components/Explore/Explore";
-import Login from "../components/Login/Login";
+import SignIn from "../components/Auth/SignIn/SignIn";
 import Checkout from "../components/Checkout/checkout";
 import Privacy from "../components/PrivacyPolicy/privacy";
 
@@ -16,9 +16,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Login />} />
-        {/* <Route exact path="/home" element={<Home />} />
         <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/signin" element={<SignIn />} />
+        {/* <Route exact path="/home" element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/explore" element={<Explore />} />

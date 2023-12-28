@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const userSchema = {
-  name: {
+  username: {
     type: String,
     required: true,
   },
@@ -9,11 +9,7 @@ const userSchema = {
     type: String,
     required: true,
   },
-  confirmpassword: {
-    type: String,
-    required: true
-  },
 };
 
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model("user", userSchema);
 export default User;

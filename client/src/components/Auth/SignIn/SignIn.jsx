@@ -1,25 +1,23 @@
-// Inbuilt Components
-import styles from "./Login.module.css";
+// Inbuilt React Packages
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import styles from "./SignIn.module.css";
+import { useNavigate } from "react-router";
+
+// Custom React Packages
+import { signIn } from "../../../service/AuthService/api";
 
 // Components & Assets include:
-import { Icons } from "../../assets/Icons/Icons";
-import Spinner from "../../assets/Spinner/Spinner";
-import AlertDialog from "../../assets/AlertDialog/AlertDialog";
-import TextField from "../../assets/InputFields/TextField/TextField";
-import PasswordField from "../../assets/InputFields/PasswordField/PasswordField";
-import PrimaryButton from "../../assets/Button/PrimaryButton/PrimaryButton";
-import SecondaryButton from "../../assets/Button/SecondaryButton/SecondaryButton";
+import { Icons } from "../../../assets/Icons/Icons";
+import Spinner from "../../../assets/Spinner/Spinner";
+import AlertDialog from "../../../assets/AlertDialog/AlertDialog";
+import PrimaryButton from "../../../assets/Button/PrimaryButton/PrimaryButton";
+import SecondaryButton from "../../../assets/Button/SecondaryButton/SecondaryButton";
 
-// Services
-import { loginuser } from "../../service/api";
-
-const Login = () => {
+const SignIn = () => {
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
-    name: "",
+    username: "",
     password: "",
   });
 
@@ -34,7 +32,7 @@ const Login = () => {
     setCredentials((prev) => ({ ...prev, [field]: value }));
   };
 
-  const setName = (e) => credentialHandler("name", e.target.value);
+  const setName = (e) => credentialHandler("username", e.target.value);
   const setPassword = (e) => credentialHandler("password", e.target.value);
 
   const alertDialogHandler = (field, value) => {
@@ -47,9 +45,9 @@ const Login = () => {
   };
 
   const authHandler = async (e) => {
-    if (!credentials.name || !credentials.password) {
+    if (!credentials.username || !credentials.password) {
       showAlert(
-        !credentials.name
+        !credentials.username
           ? "Please Enter The Username"
           : "Please Enter The Password"
       );
@@ -59,17 +57,25 @@ const Login = () => {
     setSpinner(true);
 
     try {
-      const response = await loginuser(credentials);
-
-      if ((response.statusText = "OK")) {
+      const response = await signIn(credentials);
+      if (response.data.user_authenticated) {
         setSpinner(false);
-        // navigate("/home");
+        credentialHandler("username", "");
+        credentialHandler("password", "");
+        showAlert(response.data.message);
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
       } else {
         setSpinner(false);
-        showAlert(new String(response));
+        credentialHandler("username", "");
+        credentialHandler("password", "");
+        showAlert(response.data.message);
       }
     } catch (error) {
       setSpinner(false);
+      credentialHandler("username", "");
+      credentialHandler("password", "");
       showAlert(error);
     }
   };
@@ -84,10 +90,22 @@ const Login = () => {
       <Spinner show={spinner} />
       <div className={styles.login_page}>
         <div className={styles.form_wrapper}>
-          <h1 className={styles.h1}>Login</h1>
+          <h1 className={styles.h1}>Sign In</h1>
           <div className={styles.form}>
-            <TextField placeholder="Username" event={setName} />
-            <PasswordField placeholder="Password" event={setPassword} />
+            <input
+              type="text"
+              value={credentials.username}
+              placeholder="Username"
+              className={styles.input}
+              onChange={setName}
+            />
+            <input
+              type="password"
+              value={credentials.password}
+              placeholder="Password"
+              className={styles.input}
+              onChange={setPassword}
+            />
             <PrimaryButton event={authHandler} title="Sign In" />
             <SecondaryButton
               event={() => navigate("/signup")}
@@ -104,5 +122,4 @@ const Login = () => {
     </>
   );
 };
-
-export default Login;
+export default SignIn;

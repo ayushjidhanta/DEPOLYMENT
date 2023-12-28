@@ -3,7 +3,7 @@ import Slider from './Slider.jsx';
 // import  "./Home.css";
 import { useNavigate } from 'react-router';
 import Navbar2 from './Navbar2.jsx';
-import Shortdiscription from '../ShortDiscription/shortdiscription.jsx';
+// import Shortdiscription from '../ShortDiscription/shortdiscription.jsx';
 import Footer from '../Footer/footer.jsx';
 function Home() {
 
@@ -39,8 +39,8 @@ function Home() {
           </div>
         </div>
       </section>
-      <Slider/>
-      <Shortdiscription/>
+      {/* <Slider/> */}
+      {/* <Shortdiscription/> */}
       <Footer/>
     </div>
   )

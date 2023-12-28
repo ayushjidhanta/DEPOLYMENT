@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar2 from "../Home/Navbar2";
 // import "./Explore.css";
-import SliderExp from "../Sliders/SliderExp";
+// import SliderExp from "../Sliders/SliderExp";
 import Products from "./Products";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -22,7 +22,7 @@ export default function Exploree() {
       <div className="margin-box">
         <h1>Explore 2</h1>
       </div>
-      <SliderExp />
+      {/* <SliderExp /> */}
       <div className="container">
         <div className="row">
           {products &&
